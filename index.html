@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>datagum; Revolutionising Research</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">datagum</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="navbar-list" class="nav navbar-nav">
+          </ul>
+            <input type="text" class="navbar-form navbar-brand form-control" role="search" placeholder="Add another" name="srch-term" id="srch-term" style="margin-left:80px;width:400px;height:36px;">
+          <a class="pull-right navbar-brand navbar-results" data-toggle="popover" data-placement="bottom">Results</a>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase wordcloud" role="main">
+
+<style>
+#circularG{
+position:absoute;
+top:50%;left:50%;
+width:128px;
+height:128px}
+
+.circularG{
+position:absolute;
+background-color:#000000;
+width:29px;
+height:29px;
+-moz-border-radius:19px;
+-moz-animation-name:bounce_circularG;
+-moz-animation-duration:2s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:normal;
+-webkit-border-radius:19px;
+-webkit-animation-name:bounce_circularG;
+-webkit-animation-duration:2s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:normal;
+-ms-border-radius:19px;
+-ms-animation-name:bounce_circularG;
+-ms-animation-duration:2s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:normal;
+-o-border-radius:19px;
+-o-animation-name:bounce_circularG;
+-o-animation-duration:2s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:normal;
+border-radius:19px;
+animation-name:bounce_circularG;
+animation-duration:2s;
+animation-iteration-count:infinite;
+animation-direction:normal;
+}
+
+#circularG_1{
+left:0;
+top:50px;
+-moz-animation-delay:0.75s;
+-webkit-animation-delay:0.75s;
+-ms-animation-delay:0.75s;
+-o-animation-delay:0.75s;
+animation-delay:0.75s;
+}
+
+#circularG_2{
+left:14px;
+top:14px;
+-moz-animation-delay:1s;
+-webkit-animation-delay:1s;
+-ms-animation-delay:1s;
+-o-animation-delay:1s;
+animation-delay:1s;
+}
+
+#circularG_3{
+top:0;
+left:50px;
+-moz-animation-delay:1.25s;
+-webkit-animation-delay:1.25s;
+-ms-animation-delay:1.25s;
+-o-animation-delay:1.25s;
+animation-delay:1.25s;
+}
+
+#circularG_4{
+right:14px;
+top:14px;
+-moz-animation-delay:1.5s;
+-webkit-animation-delay:1.5s;
+-ms-animation-delay:1.5s;
+-o-animation-delay:1.5s;
+animation-delay:1.5s;
+}
+
+#circularG_5{
+right:0;
+top:50px;
+-moz-animation-delay:1.75s;
+-webkit-animation-delay:1.75s;
+-ms-animation-delay:1.75s;
+-o-animation-delay:1.75s;
+animation-delay:1.75s;
+}
+
+#circularG_6{
+right:14px;
+bottom:14px;
+-moz-animation-delay:2s;
+-webkit-animation-delay:2s;
+-ms-animation-delay:2s;
+-o-animation-delay:2s;
+animation-delay:2s;
+}
+
+#circularG_7{
+left:50px;
+bottom:0;
+-moz-animation-delay:2.25s;
+-webkit-animation-delay:2.25s;
+-ms-animation-delay:2.25s;
+-o-animation-delay:2.25s;
+animation-delay:2.25s;
+}
+
+#circularG_8{
+left:14px;
+bottom:14px;
+-moz-animation-delay:2.5s;
+-webkit-animation-delay:2.5s;
+-ms-animation-delay:2.5s;
+-o-animation-delay:2.5s;
+animation-delay:2.5s;
+}
+
+@-moz-keyframes bounce_circularG{
+0%{
+-moz-transform:scale(1)}
+
+100%{
+-moz-transform:scale(.3)}
+
+}
+
+@-webkit-keyframes bounce_circularG{
+0%{
+-webkit-transform:scale(1)}
+
+100%{
+-webkit-transform:scale(.3)}
+
+}
+
+@-ms-keyframes bounce_circularG{
+0%{
+-ms-transform:scale(1)}
+
+100%{
+-ms-transform:scale(.3)}
+
+}
+
+@-o-keyframes bounce_circularG{
+0%{
+-o-transform:scale(1)}
+
+100%{
+-o-transform:scale(.3)}
+
+}
+
+@keyframes bounce_circularG{
+0%{
+transform:scale(1)}
+
+100%{
+transform:scale(.3)}
+
+}
+
+</style>
+<div id="circularG">
+<div id="circularG_1" class="circularG">
+</div>
+<div id="circularG_2" class="circularG">
+</div>
+<div id="circularG_3" class="circularG">
+</div>
+<div id="circularG_4" class="circularG">
+</div>
+<div id="circularG_5" class="circularG">
+</div>
+<div id="circularG_6" class="circularG">
+</div>
+<div id="circularG_7" class="circularG">
+</div>
+<div id="circularG_8" class="circularG">
+</div>
+</div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="d3.layout.cloud.js"></script>
+    <script src="words.js"></script>
+    <script>
+    (function() {
+        var fill = d3.scale.category20();
+        var current_words = [];
+
+        function draw(words, layout) {
+          $(".theme-showcase").empty();
+          d3.select(".theme-showcase").append("svg")
+              .attr("width", layout.size()[0])
+              .attr("height", layout.size()[1])
+              .append("g")
+              .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+              .selectAll("text")
+              .data(words)
+              .enter().append("text")
+              .style("font-size", function(d) { return d.size + "px"; })
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("class", "clickable-word")
+              .attr("text-anchor", "middle")
+              .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .text(function(d) { return d.text; });
+        }
+
+        function append_new_term_to_list(item_name) {
+            var a_text = document.createElement("a");
+            var list_item = document.createElement("li");
+
+            a_text.innerHTML = item_name;
+            list_item.appendChild(a_text);
+            $("#navbar-list")[0].appendChild(list_item);
+            current_words.push(item_name);
+            $.ajax("http://threesheet.herokuapp.com/d3query/" + current_words).done(process_new_ajax_data)
+        }
+
+        function new_layout_for(frequency_list) {
+            var layout = d3.layout.cloud()
+                .size([1920, 1200])
+                .words(frequency_list["words"].filter(function(d) {
+                    return d.text.length > 4;
+                }).map(function(d) {
+                  return {
+                    text: d.text,
+                    size: 10 + Math.min(40, d.size)
+                  };
+                }))
+                .padding(5)
+                .rotate(function() { return 0; })
+                .font("Impact")
+                .fontSize(function(d) { return d.size; })
+                .timeInterval(3)
+                .on("end", function(words) {
+                    draw(words, layout);
+                    $(".clickable-word").unbind().click(function(e) {
+                        append_new_term_to_list(this.innerHTML);
+                    });
+                });
+            layout.start();
+        }
+
+        function popover_content(data) {
+            var div_element = document.createElement("div");
+            div_element.setAttribute("id", "");
+            div_element.setAttribute("style", "overflow-y: scroll; width: 300px;");
+            div_element.setAttribute("class", div_element.getAttribute("class") + " pre-scrollable");
+
+            var ul_element = document.createElement("ul");
+            var li_element = document.createElement("li");
+            $.each(data["urls"], function(index, url) {
+                var li_element = document.createElement("li");
+                var a_element = document.createElement("a");
+                a_element.setAttribute("href",url);
+                a_element.setAttribute("target","_blank");
+                a_element.innerHTML = url;
+                li_element.appendChild(a_element);
+                ul_element.appendChild(li_element);
+            });
+            div_element.appendChild(ul_element);
+            return $(div_element).html();
+        }
+
+        function process_new_ajax_data(data) {
+            var uniques = data["urls"].filter(function(item, pos) {
+                return data["urls"].indexOf(item) == pos;
+            });
+            data["urls"] = uniques;
+
+            $(".navbar-results").html("Results: " + data["urls"].length)
+            new_layout_for(data);
+            if ($(".navbar-results").data('bs.popover')) {
+                $(".navbar-results").data('bs.popover').options.content = popover_content(data);
+            }
+        }
+
+        $(".navbar-results").popover({
+            html: true
+        });
+
+        $("#srch-term").on("keypress", function(e) {
+            if (e.keyCode == 13) {
+                append_new_term_to_list($("#srch-term")[0].value);
+                $("#srch-term")[0].value = "";
+            }
+        });
+
+        $.ajax("http://threesheet.herokuapp.com/d3query/salary").done(process_new_ajax_data)
+    })();
+    </script>
+    <style>
+        body {
+            font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+        }
+        .legend {
+            border: 1px solid #555555;
+            border-radius: 5px 5px 5px 5px;
+            font-size: 0.8em;
+            margin: 10px;
+            padding: 8px;
+        }
+        .bld {
+            font-weight: bold;
+        }
+        @media (min-width:1200px){
+            .container{
+                width:1920px
+            }
+
+        }
+
+        .stack-right {
+            margin-right: 0px;
+        }
+
+        .form-control {
+          display: block;
+          width: 100%;
+          height: 34px;
+          padding: 6px 12px;
+          font-size: 14px;
+          line-height: 1.42857143;
+          color: #555;
+          background-color: #222;
+          background-image: none;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+               -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+                  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .form-control:focus {
+          border-color: #66afe9;
+          outline: 0;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+                  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        }
+    </style>
+  </body>
+</html>
+
+
